@@ -13,7 +13,8 @@ my_model = genanki.Model(
         {'name': 'Pinyins'},
         {'name': 'Radicals'},
         {'name': 'Stroke Numbers'},
-        {'name': 'Definitions'}
+        {'name': 'Definitions'},
+        {'name': 'Example Sentences'}
     ],
     templates=[
         {
@@ -23,10 +24,12 @@ my_model = genanki.Model(
                 <div><strong>Character(s):</strong> {{Characters}}</div>
                 <div>{{GIF URLs}}</div>
                 <hr id="answer">
+                <div><strong>Definition:</strong> {{Definitions}}</div>
                 <div><strong>Pinyin:</strong> {{Pinyins}}</div>
                 <div><strong>Radical:</strong> {{Radicals}}</div>
                 <div><strong>Stroke Number:</strong> {{Stroke Numbers}}</div>
-            ''',  # Back of card shows the characters and other details
+                <div><strong>Example Sentences:</strong><br>{{#Example Sentences}}{{Example Sentences}}{{/Example Sentences}}</div>
+            ''',  # Back of card shows the characters, details, and example sentences
         },
     ],
     css='''
@@ -40,8 +43,12 @@ my_model = genanki.Model(
         img {
             max-height: 100px;
         }
+        .example-sentence {
+            margin-bottom: 10px;
+        }
     '''
 )
+
 
 
 # Create a new deck

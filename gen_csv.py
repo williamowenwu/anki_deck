@@ -45,27 +45,31 @@ def scrape_character_info(character):
     else:
         return [character, 'Error: Failed to retrieve data']
 
-def format_phrase_data(characters_data, custom_definition=None):
+def format_phrase_data(characters_data, custom_definition=None, example_sentences=None):
     # Formats data for phrases with delimiters
     formatted_data = []
-    print(f"cust def: {custom_definition}")
-    
     for i in range(6):  # 6 fields per character
-        if i == 5 and custom_definition:  # Replace definitions with custom definition
-            formatted_data.append(custom_definition)
-        else:
-            field_data = [char_data[i] for char_data in characters_data]
-            formatted_data.append('|'.join(field_data))
+        field_data = [char_data[i] for char_data in characters_data]
+        formatted_data.append('|'.join(field_data))
+
+    # Replace definitions with custom definition if provided
+    formatted_data[5] = custom_definition if custom_definition else formatted_data[5]
+
+    # Add example sentences at the end
+    formatted_data.append(example_sentences if example_sentences else "No example provided")
     return formatted_data
 
-def scrape_word_info(word, custom_definition=None):
+def scrape_word_info(word, custom_definition=None, example_sentences=None):
     characters = list(word)
     characters_data = [scrape_character_info(character) for character in characters]
-    
+
     if len(characters) > 1:
-        return format_phrase_data(characters_data, custom_definition)
+        return format_phrase_data(characters_data, custom_definition, example_sentences)
     else:
-        return characters_data[0] if custom_definition is None else [characters_data[0][0], characters_data[0][1], characters_data[0][2], characters_data[0][3], characters_data[0][4], custom_definition]
+        char_data = characters_data[0]
+        char_data[5] = custom_definition if custom_definition else char_data[5]
+        char_data.append(example_sentences if example_sentences else "No example provided")
+        return char_data
 
 input_file = 'vocab.txt'
 output_file = 'anki_import.csv'
@@ -75,19 +79,20 @@ with open(input_file, 'r', encoding='utf-8') as file:
 
 with open(output_file, mode='w', newline='', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(['Characters', 'GIF URLs', 'Pinyins', 'Radicals', 'Stroke Numbers', 'Definitions'])
+    writer.writerow(['Characters', 'GIF URLs', 'Pinyins', 'Radicals', 'Stroke Numbers', 'Definitions', 'Example Sentences'])
 
     for line in words:
-        # Replace ": " with ":" to handle the space issue
-        standardized_line = line.replace("：", ":")
-
-        if ':' in standardized_line:
-            word, custom_definition = standardized_line.split(':', 1)
-            custom_definition = custom_definition.strip()
+        line = line.replace("：", ":")  # Standardize format for colon
+        if ':' in line:
+            parts = line.split('|')
+            word_def = parts[0].split(':')
+            word = word_def[0].strip()
+            custom_definition = word_def[1].strip() if len(word_def) > 1 else None
+            example_sentences = '|'.join(parts[1:]).strip() if len(parts) > 1 else None
         else:
-            word, custom_definition = line, None
+            word, custom_definition, example_sentences = line, None, None
         
-        row = scrape_word_info(word, custom_definition)
+        row = scrape_word_info(word, custom_definition, example_sentences)
         writer.writerow(row)
 
 print(f"Data sucessfully exported to {output_file}!")
