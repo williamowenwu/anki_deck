@@ -1,0 +1,25 @@
+Format:
+Chinese characters: definition (in english) || example sentence - Pinyins
+
+Examples:
+
+普通话: Mandarin || 在中国，普通话是最广泛使用的语言。- Zài Zhōngguó, pǔtōnghuà shì zuì guǎngfàn shǐyòng de yǔyán. || In China, Mandarin is the most widely used language.
+南腔北调: southern tune and northern intonation - mixed accent || 他说话的南腔北调让人觉得很有趣。- Tā shuōhuà de nánqiāng běidiào ràng rén juéde hěn yǒuqù. || His speech, with a mix of southern tune and northern intonation, sounds very interesting.
+乱: disorderly; messy || 这个房间太乱了，我们需要打扫一下。- Zhège fángjiān tài luàn le, wǒmen xūyào dǎsǎo yīxià. || This room is too messy; we need to clean it up.
+笑: laugh || 听到那个笑话后，大家都笑了。- Tīng dào nàgè xiàohuà hòu, dàjiā dōu xiào le. || After hearing that joke, everyone laughed.
+互相: each other, mutually || 我们应该互相帮助。- Wǒmen yīnggāi hùxiāng bāngzhù. || We should help each other.
+别人: other people, others || 关心别人就是一种美德。- Guānxīn biérén jiùshì yī zhǒng měidé. || Caring about others is a virtue.
+卷舌: curl the tongue || 学习西班牙语时，你需要学会卷舌音。- Xuéxí Xībānyáyǔ shí, nǐ xūyào xuéhuì juǎn shé yīn. || When learning Spanish, you need to learn how to roll your Rs.
+总: anyway, after all, always || 总之，我们必须完成这个项目。- Zǒngzhī, wǒmen bìxū wánchéng zhège xiàngmù. || In any case, we must complete this project.
+低: low, steep || 这个价格比我预期的低。- Zhège jiàgé bǐ wǒ yùqī de dī. || This price is lower than I expected.
+既然就: given the fact, since || 既然就决定了，我们就应该坚持到底。- Jìrán jiù juédìngle, wǒmen jiù yīnggāi jiānchí dàodǐ. || Since the decision has been made, we should stick to it.
+方言: dialect || 他说的是一种很难懂的方言。- Tā shuō de shì yī zhǒng hěn nán dǒng de fāngyán. || He speaks a dialect that is difficult to understand.
+目的: purpose || 我们讨论的目的是为了找到解决方案。- Wǒmen tǎolùn de mùdì shì wèile zhǎodào jiějué fāng'àn. || The purpose of our discussion is to find a solution.
+念: pronounce; read; study || 请大声念这段文字。- Qǐng dàshēng niàn zhè duàn wénzì. || Please read this passage out loud.
+要不然: otherwise || 快点做，要不然我们会迟到的。- Kuài diǎn zuò, yàoburán wǒmen huì chídào de. || Hurry up, otherwise we'll be late.
+带又音: speak with accent
+发音: pronunciation /pronounce
+变: change
+南方: south
+道理: sense; reason; argument
+北方人: Northerner
