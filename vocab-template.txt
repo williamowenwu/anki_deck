@@ -1,5 +1,5 @@
 Format:
-Chinese characters: definition (in english) || example sentence - Pinyins
+Chinese characters: definition (in english) || example sentence - Pinyins || Translation
 
 Examples:
 
